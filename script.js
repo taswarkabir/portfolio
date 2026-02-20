@@ -39,7 +39,7 @@ const projects = [
         title: "Dodo Compositions",
         tags: ["Brand Identity", "Art Direction", "Social Design"],
         description: "I co-founded and designed a wellness brand for students, creating both physical goods (apparel, comfort objects) and the visual identity. I focused on art direction and graphic design to ensure a cohesive brand system.",
-        images: ["images/dodo1.png", "images/dodo2.png", "images/dodo3.png", "images/dodo4.png", "images/dodo5.jpg", "images/dodo6.jpg", "images/dodo7.png", "images/dodo8.jpg"]
+        images: ["images/dodo1.png", "images/dodo2.png", "images/dodo3.png", "images/dodo4.png", "images/dodo5-1.jpg", "images/dodo6-1.jpg", "images/dodo7.png", "images/dodo8.jpg"]
     }
 ];
 
