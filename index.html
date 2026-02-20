@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taswar Kabir | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <main class="container">
+        <!-- Left Column: Fixed Info & Nav -->
+        <aside class="left-column">
+            <header>
+                <h1>Taswar Kabir</h1>
+                <div class="bio">
+                    <p>Product designer and brand builder with over six years of experience designing brand systems,
+                        websites, and digital products.</p>
+                    <p>Currently building <a href="https://hormoni.io/" target="_blank"><u>Hormoni</u></a>.</p>
+                    <p>Pursuing an M.S. in Data Science at Boston University, exploring the use of data through the lens
+                        of intuition, functionality, and evidence-based design.</p>
+                </div>
+            </header>
+
+            <nav>
+                <div class='section-label'>Selected Work <span>&darr;</span></div>
+                <ul class="project-list" id="projectList">
+                    <!-- Project items will be injected here via JS -->
+                </ul>
+            </nav>
+
+            <footer>
+                <div class="socials">
+                    <a href="mailto:taswarkabir.info@gmail.com">Email</a>
+                    <a href="https://linkedin.com/in/taswarkabir" target="_blank">LinkedIn</a>
+                    <a href="https://www.instagram.com/taswarkabir" target="_blank">Instagram</a>
+                </div>
+            </footer>
+        </aside>
+
+        <!-- Right Column: Dynamic Content -->
+        <section class="right-column">
+            <button id="static-close-btn" class="close-btn" onclick="resetToHome()">&times;</button>
+            <div id="projectDisplay">
+                <div class="intro-view">
+                    <!-- Default Content -->
+                    <div class='welcome-msg'>
+                        <h3>Welcome.</h3>
+                        <p>Select a project from the left to view details.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile Overlay Container -->
+    <div id="mobileOverlay" class="mobile-overlay hidden">
+        <button id="closeOverlay" class="close-btn" aria-label="Close details">&times;</button>
+        <div class="overlay-content" id="overlayContent">
+            <!-- Dynamic content tailored for mobile -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

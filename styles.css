@@ -1,0 +1,462 @@
+/* Base Reset & Typography */
+:root {
+    --bg-color: #f5f5f5;
+    --text-color: #333;
+    --accent-color: #666;
+    --font-serif: "Goudy Bookletter 1911", serif;
+    --font-sans: 'Sora', sans-serif;
+    --max-width: 1350px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow-y: scroll !important;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 101vh;
+    display: flex;
+    display: flex;
+    /* Keeping duplicate display: flex as seen in file, or clean it up? I'll clean it up to be nice */
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 5vh;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+/* Layout Container */
+.container {
+    display: grid;
+    grid-template-columns: 540px 1fr;
+    max-width: 1350px;
+    width: 100%;
+    margin: 0 auto;
+    height: 85vh;
+    background: transparent;
+    box-shadow: none;
+}
+
+/* Left Column */
+.left-column {
+    height: 100vh;
+    padding: 4rem;
+    padding-right: 2rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid #eee;
+    overflow: hidden;
+}
+
+.left-column::-webkit-scrollbar {
+    display: none;
+}
+
+.left-column h1 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+}
+
+.bio {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+    max-width: 100%;
+    margin-bottom: 2.5rem;
+}
+
+.bio p {
+    margin-bottom: 1.2rem;
+}
+
+.bio p:last-child {
+    margin-bottom: 0;
+}
+
+.section-label {
+    font-family: var(--font-sans);
+    font-size: .85rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    color: #888;
+}
+
+.project-list {
+    list-style: none;
+    margin-top: 0;
+}
+
+.project-list li {
+    margin-bottom: 0.8rem;
+}
+
+.project-btn {
+    background: none;
+    border: none;
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s, transform 0.3s;
+    text-align: left;
+    padding: 0;
+    letter-spacing: 0.5px;
+}
+
+.project-btn:hover,
+.project-btn.active {
+    color: var(--text-color);
+    transform: translateX(10px);
+}
+
+.left-column footer {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* Footer Social Links */
+.socials {
+    margin-top: .5rem;
+    display: flex;
+    gap: 1.5rem;
+    /* Space them out */
+}
+
+.socials a {
+    color: #999;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
+}
+
+.socials a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+/* Right Column */
+.right-column {
+    position: relative;
+    padding: 4rem;
+    overflow-y: auto;
+    height: 100%;
+    scrollbar-width: none;
+    scrollbar-gutter: stable;
+    /* Independent scroll if content is long */
+}
+
+.right-column::-webkit-scrollbar {
+    display: none;
+}
+
+.intro-view,
+.welcome-msg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    color: #ccc;
+}
+
+#static-close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
+    z-index: 20;
+    transition: color 0.3s;
+    display: none;
+    /* Hidden by default */
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+.intro-view h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Project Details */
+.project-detail {
+    animation: fadeIn 0.5s ease;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.project-header {
+    margin-bottom: 3rem;
+}
+
+.project-title {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* New Tag Styles */
+.tag-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.project-tag {
+    border: 1px solid #333;
+    border-radius: 50px;
+    padding: 6px 16px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    background: transparent;
+    font-family: var(--font-sans);
+    /* Ensuring sans-serif as implied by UI style */
+    color: var(--text-color);
+}
+
+.project-description {
+    font-size: 1.1rem;
+    margin-bottom: 4rem;
+    max-width: 600px;
+}
+
+/* Carousel */
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding-bottom: 20px;
+    /* Space for scrollbar if visible */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
+
+.carousel-item {
+    /* flex: 0 0 80%; */
+    /* width: 100%; */
+    scroll-snap-align: center;
+    border-radius: 4px;
+    overflow: hidden;
+    background: transparent;
+    /* aspect-ratio: 16/9; Remove fixed aspect ratio */
+}
+
+
+.project-detail img,
+.project-detail video {
+    max-height: 40vh;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 4rem auto;
+}
+
+
+/* Mobile Overlay */
+.mobile-overlay {
+    display: none;
+    /* Hidden on desktop */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    body {
+        display: block;
+        min-height: auto;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        height: auto;
+        max-width: 100%;
+    }
+
+    .left-column {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 2rem;
+        border-right: none;
+    }
+
+    .right-column {
+        display: none;
+        /* Hide right column on mobile/tablet portrait */
+    }
+
+    /* Mobile Overlay Styles */
+    .mobile-overlay {
+        display: block;
+        /* Enable DOM element */
+        position: fixed;
+        inset: 0;
+        background: white;
+        z-index: 1000;
+        overflow-y: auto;
+        padding: 2rem;
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(100%);
+    }
+
+    .mobile-overlay.active {
+        transform: translateY(0);
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        background: none;
+        border: none;
+        font-size: 2.5rem;
+        cursor: pointer;
+        line-height: 1;
+        z-index: 1001;
+    }
+
+    .carousel-item {
+        flex: 0 0 90%;
+    }
+}
+
+@media (max-height: 800px) {
+    .left-column {
+        padding: 2rem;
+    }
+
+    .left-column h1 {
+        font-size: 2.5rem;
+    }
+
+    .project-btn {
+        font-size: 1.2rem;
+    }
+
+    .bio {
+        font-size: 1rem;
+    }
+
+    .project-description {
+        font-size: 1rem;
+    }
+
+    .project-title {
+        line-height: auto;
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* 1. The Container */
+    .project-detail .carousel {
+        display: flex !important;
+        gap: 1rem !important;
+        overflow-x: auto !important;
+        padding-bottom: 1rem !important;
+        scroll-snap-type: x mandatory;
+        /* Aligns images centrally if they have slightly different heights */
+        align-items: start;
+    }
+
+    /* 2. The Item (CRITICAL CHANGE) */
+    /* We change this from '85%' to 'auto' so it wraps the image tightly */
+    .project-detail .carousel-item {
+        flex: 0 0 auto !important;
+        width: auto !important;
+        margin: 0 !important;
+        scroll-snap-align: center;
+    }
+
+    /* 3. The Images/Video (CRITICAL CHANGE) */
+    .project-detail .carousel-item img,
+    .project-detail .carousel-item video {
+        /* Fix the height, let width scale naturally */
+        height: 50vh !important;
+        width: auto !important;
+
+        /* Ensure wide landscape images don't overflow the screen */
+        max-width: 90vw !important;
+
+        display: block !important;
+        margin: 0 !important;
+        object-fit: contain !important;
+    }
+}
+
+/* --- SINGLE VISUAL OVERRIDE (Centers and Enlarges) --- */
+
+/* 1. Target the item ONLY if it's the single child, and center it */
+.project-detail .carousel-item:only-child {
+    margin: 0 auto !important;
+    /* Pushes the single item to the exact center */
+    flex: 0 0 auto !important;
+    width: auto !important;
+}
+
+/* 2. Target the image/video inside that single item, and make it larger */
+.project-detail .carousel-item:only-child img,
+.project-detail .carousel-item:only-child video {
+    height: 50vh !important;
+    /* This makes it 75% of the screen height */
+    width: auto !important;
+    max-width: 100% !important;
+    /* Prevents it from breaking the screen width */
+    object-fit: contain !important;
+    display: block !important;
+}
