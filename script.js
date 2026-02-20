@@ -11,7 +11,7 @@ const projects = [
         title: "MatrixMindz",
         tags: ["Data Analytics", "Growth Marketing", "Brand Identity"],
         description: "I led a top-to-bottom brand evolution for a financial consulting firm, standardizing their visual identity across all digital and sales assets. Pairing this with optimizing their content architecture and outreach funnels, I drove a 250% increase in engagement and a 35% lift in qualified leads.",
-        images: ["images/mmf1.png", "images/mmf2.png", "images/mmf3.mp4", "images/mmf4.png", "images/mmf5.mp4", "images/mmf6.jpg", "images/mmf7.jpg"]
+        images: ["images/mmf3.mp4", "images/mmf2.png", "images/mmf1.png", "images/mmf4.png", "images/mmf5.mp4", "images/mmf6.jpg", "images/mmf7.jpg"]
     },
     {
         id: 3,
@@ -39,7 +39,7 @@ const projects = [
         title: "Dodo Compositions",
         tags: ["Brand Identity", "Art Direction", "Social Design"],
         description: "I co-founded and designed a wellness brand for students, creating both physical goods (apparel, comfort objects) and the visual identity. I focused on art direction and graphic design to ensure a cohesive brand system.",
-        images: ["images/dodo1.png", "images/dodo2.png", "images/dodo3.png", "images/dodo4.png", "images/dodo5-1.jpg", "images/dodo6-1.jpg", "images/dodo7.png", "images/dodo8.jpg"]
+        images: ["images/dodo1.png", "images/dodo2.png", "images/dodo3.png", "images/dodo4.png", "images/dodo5-1.jpg", "images/dodo6-1.jpg", "images/dodo7-1.png", "images/dodo8-1.jpg"]
     }
 ];
 

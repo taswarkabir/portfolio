@@ -439,6 +439,24 @@ a:hover {
     }
 }
 
+@media (min-width: 769px) {
+    .project-detail .carousel-item {
+        flex: 0 0 auto !important;
+    }
+
+    .project-detail img,
+    .project-detail video {
+        height: 60vh !important;
+        /* Forces a large, commanding size on desktop */
+        max-height: 60vh !important;
+        /* Overrides the base max-height: 40vh */
+        width: auto !important;
+        max-width: 100% !important;
+        object-fit: contain !important;
+        margin-bottom: 2rem;
+    }
+}
+
 /* --- SINGLE VISUAL OVERRIDE (Centers and Enlarges) --- */
 
 /* 1. Target the item ONLY if it's the single child, and center it */
